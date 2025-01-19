@@ -1,0 +1,167 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #c3c3c3;
+}
+
+.containerr {
+  display: flex;
+  gap: 20px;
+}
+
+.calculator {
+  background-color: #272323;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 330px;
+  text-align: center;
+}
+
+.history {
+  position: relative;
+  font-size: 18px;
+  color: #a5a5a5;
+  text-align: right;
+  left: 55px;
+  margin-bottom: 5px;
+  min-height: 25px;
+  max-width: 230px;
+}
+
+.display {
+  width: 100%;
+  height: 70px;
+  font-size: 24px;
+  text-align: right;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.button {
+  padding: 15px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.button.operator {
+  background-color: #ff9800;
+}
+
+.button.operator:hover {
+  background-color: #e68900;
+}
+
+.button-history {
+  margin: -4px;
+  display: flex;
+  position: absolute;
+}
+
+.button-history button {
+  color: white;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Side History - default */
+.history-container {
+  display: none;
+  flex-direction: column;
+  width: 250px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  height: auto;
+}
+
+.history-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 300px; /* Set max-height to allow scroll */
+}
+
+.history-container h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.history-entry {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+  padding: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.clear-history {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.clear-history:hover {
+  background-color: #e63939;
+}
+
+/* Responsif: Menampilkan history di bawah pada perangkat mobile, tetapi tetap mempertahankan ukuran */
+@media (max-width: 768px) {
+  .containerr {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .history-container {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin-top: 20px; /* Jarak dengan kalkulator */
+    height: 200px; /* Ukuran tetap untuk side history */
+  }
+
+  .history-content {
+    max-height: 100%; /* Agar riwayat scroll di dalam kontainer dengan batas tetap */
+    overflow-y: scroll; /* Scroll jika ada banyak entri */
+  }
+
+  .clear-history {
+    width: 90%;
+    position: absolute;
+  bottom: 15px;
+  padding: 10px;
+  }
+}

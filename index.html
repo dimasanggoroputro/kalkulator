@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Sederhana dengan History</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="containerr">
+      <div class="calculator">
+        <div data-bs-toggle="modal" data-bs-target="#guideModal">
+          <button><i class="bx bx-book"></i> Panduan</i></button>
+        </div>
+      <!-- tombol side history -->
+        <div class="button-history" id="button-history">
+          <button onclick="toggleHistory()"><i class="bx bx-history"></i></button>
+        </div>
+
+        <div id="history" class="history"></div>
+        <input type="text" id="display" class="display" readonly />
+        <div class="button-container">
+          <button class="button delete" onclick="deleteLast()"><i class='bx bxs-tag-x'></i></button>
+          <button class="button clear" onclick="clearDisplay()">C</button>
+          <button class="button operator" onclick="addToDisplay('÷')">÷</button>
+          <!-- Simbol diubah -->
+          <button class="button operator" onclick="addToDisplay('-')">-</button>
+
+          <button class="button" onclick="addToDisplay('7')">7</button>
+          <button class="button" onclick="addToDisplay('8')">8</button>
+          <button class="button" onclick="addToDisplay('9')">9</button>
+          <button class="button operator" onclick="addToDisplay('+')">+</button>
+
+          <button class="button" onclick="addToDisplay('4')">4</button>
+          <button class="button" onclick="addToDisplay('5')">5</button>
+          <button class="button" onclick="addToDisplay('6')">6</button>
+          <button class="button operator" onclick="addToDisplay('x')">x</button>
+          <!-- Simbol diubah -->
+
+          <button class="button" onclick="addToDisplay('1')">1</button>
+          <button class="button" onclick="addToDisplay('2')">2</button>
+          <button class="button" onclick="addToDisplay('3')">3</button>
+          <button class="button operator" onclick="addToDisplay('%')">%</button>
+
+          <button class="button" onclick="addToDisplay('0')">0</button>
+          <button class="button" onclick="addToDisplay('.')">.</button>
+          <button class="button" onclick="calculate()">=</button>
+        </div>
+      </div>
+      <div class="history-container" id="historyContainer">
+        <h5>History</h5>
+        <div id="side-history" class="history-content"></div>
+        <button class="clear-history" onclick="clearHistory()">
+          <i class="bx bxs-trash-alt"></i>
+        </button>
+      </div>
+
+      <!-- Guide -->
+      <div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="guideModalLabel">Panduan Penggunaan Kalkulator</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h6><b>Angka dan Operasi:</b></h6>
+              <ul>
+                <li>Klik tombol angka dan operasi untuk memasukkan perhitungan.</li>
+                <li><b>Perkalian:</b> Gunakan simbol <b>x</b> pada kalkulator atau tanda bintang (<b>x</b>) di keyboard.</li>
+                <li><b>Pembagian:</b> Gunakan simbol <b>÷</b> pada kalkulator atau tanda garis miring (<b>/</b>) di keyboard.</li>
+                <li><b>Hapus Angka:</b> Gunakan tombol <i class='bx bxs-tag-x'></i> untuk menghapus angka terakhir.</li>
+                <li><b>Bersihkan:</b> Klik tombol "C" untuk menghapus semua angka di layar.</li>
+                <li><b>Hitung:</b> Klik "=" untuk mendapatkan hasil perhitungan.</li>
+              </ul>
+              <h6><b>Keyboard:</b></h6>
+              <ul>
+                <li>Gunakan tombol angka dan operator pada keyboard untuk mengetik.</li>
+                <li>Tekan <b>Enter</b> atau "=" untuk menghitung.</li>
+                <li>Gunakan <b>x</b> untuk perkalian dan <b>/</b> untuk pembagian.</li>
+                <li>Tekan <b>Backspace</b> untuk menghapus angka terakhir.</li>
+                <li>Tekan <b>Esc</b> untuk membersihkan layar.</li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
