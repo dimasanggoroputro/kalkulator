@@ -142,13 +142,15 @@ body {
   .containerr {
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
 
 
   .history-container {
-    display: block;
+    display: none;
     width: 100%;
-    position: relative;
+    position: absolute;
+    bottom: 0;
     margin-top: 20px; /* Jarak dengan kalkulator */
     height: 200px; /* Ukuran tetap untuk side history */
   }
@@ -159,9 +161,9 @@ body {
   }
 
   .clear-history {
-    width: 90%;
+    width: 15%;
     position: absolute;
-  bottom: 15px;
-  padding: 10px;
+    bottom: 10px;
+    padding: 10px;
   }
 }
